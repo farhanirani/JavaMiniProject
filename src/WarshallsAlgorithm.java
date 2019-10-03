@@ -26,9 +26,19 @@ class code
     int cc,rc,i,j;
     int r[] = new int[10];
     int c[] = new int[10];
-    
+    int b[][] = new int[10][10];
     public void calculate()
     {
+        //set the b matrix
+        for(row=0;row<count;row++)
+        {
+            for(col=0;col<count;col++)
+            {
+                b[row][col]=a[row][col];
+            }
+            System.out.println();
+        }
+        
         for(num=0;num<count;num++)
         {
             cc=0;
@@ -59,6 +69,19 @@ class code
                     a[c[i]][r[j]]=1;
                 }
             }
+        }
+    }
+    
+    public void disp()
+    {
+        System.out.println("ENTERED TRANSISTIVE MATRIX IS: ");
+        for(row=0;row<count;row++)
+        {
+            for(col=0;col<count;col++)
+            {
+                System.out.print("  "+b[row][col]);
+            }
+            System.out.println();
         }
     }
     
@@ -99,6 +122,7 @@ public class WarshallsAlgorithm {
             code x = new code();
             x.getdata();
             x.calculate();
+            x.disp();
             x.output();
             }
 }
